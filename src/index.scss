@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+    body {
+        @apply bg-slate-900 px-5 text-white;
+    }
+}
+@layer components {
+    .page-container {
+        max-width: 800px;
+        @apply mx-auto
+    }
+    .page-container-fluid {
+        max-width: 1080px;
+        @apply mx-auto
+    }
+    .movie-list .swiper-slide  {
+        width: 240px;
+        height: auto;
+    }
+    .banner .swiper {
+        height: 100%;
+    }
+    .btn {
+        @apply flex items-center justify-center bg-primary w-[30px] h-[30px] rounded-[2px] cursor-pointer transition-all duration-500 hover:bg-opacity-80;
+    }
+    .click-btn {
+        @apply hover:bg-opacity-50 transition-all duration-300;
+    }
+    .active {
+        @apply bg-opacity-50 transition-all duration-300;
+    }
+    :root {
+        --loader-background-color: #EEEEEE;
+        --loader-highlight-color: #DEDEDE;
+    }
+    .skeleton-loader {
+        background: linear-gradient(90deg, var(--loader-background-color) 25%, var(--loader-highlight-color) 50%, var(--loader-background-color) 75%);
+        background-size: 200% 100%;
+        animation: loading 2s infinite ease-in-out;
+        border-radius: 8px;
+    }
+    @keyframes loading {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
+
+}
